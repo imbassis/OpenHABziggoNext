@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="ziggonext"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+	<thing-type id="nextbox">
+		<label>ZiggoNext SetTopBox</label>
+		<description>Provides means to see the status of your Ziggo Next STB and control it.</description>
+
+		<channels>
+			<channel id="powerStatus" typeId="powerStatus"></channel>
+			<channel typeId="power" id="power"></channel>
+			<channel typeId="sourceName" id="sourceName"></channel>
+			<channel typeId="keyCode" id="keyCode"></channel>
+		</channels>
+		
+        <properties>
+            <property name="householdId">-</property>
+            <property name="deviceId">-</property>
+        </properties>
+
+		<config-description>
+			<parameter name="username" type="text" required="false">
+				<label>Ziggo username</label>
+				<description>Provide your Ziggo username to connect to your STB (in case you want to override the username in the binding settings)</description>
+			</parameter>
+			<parameter name="password" type="text" required="false">
+				<label>Ziggo password</label>
+				<description>Provide your Ziggo password to connect to your STB  (in case you want to override the password in the binding settings)</description></parameter>
+		</config-description>
+
+	</thing-type>
+	<channel-type id="powerStatus">
+		<item-type>Text</item-type>
+		<label>Power status</label>
+		<description>STB Power status. Describes the state of the Ziggo Next</description>
+	</channel-type>
+	
+	<channel-type id="power">
+		<item-type>Switch</item-type>
+		<label>Power</label>
+		<description>STB Power button. Turning on only works if power usage is set to High in Ziggo Next settings.</description>
+	</channel-type>
+    
+    <channel-type id="sourceName">
+        <item-type>Text</item-type>
+        <label>Source name</label>
+        <description>Describes the current source</description>
+    </channel-type>
+    
+    <channel-type id="keyCode">
+        <item-type>Text</item-type>
+        <label>Key code</label>
+        <description>Allows to send virtual key presses</description>
+        <command>
+        	<options>
+        		<option value="Power">Power</option>
+                <option value="ChannelUp">Channel Up</option>
+                <option value="ChannelDown">Channel Down</option>
+                <option value="MediaPlayPause">Play Pause</option>
+        	</options>
+        </command>
+    </channel-type>
+
+</thing:thing-descriptions>

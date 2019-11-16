@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding:binding id="ziggonext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:binding="https://openhab.org/schemas/binding/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/binding/v1.0.0 https://openhab.org/schemas/binding-1.0.0.xsd">
+
+	<name>ZiggoNext Binding</name>
+	<description>This binding lets you control Ziggo Next STB devices.</description>
+	<author>Rolf Vermeer</author>
+	
+    <config-description>
+<!-- 
+        <parameter name="allowSystemPings" type="boolean">
+            <default>true</default>
+            <label>Allow system pings</label>
+            <description>Allows or disallows to use system pings next to the java integrated ping functionality.
+            On windows the system ping works more reliable most of the time.</description>
+        </parameter>
+        <parameter name="allowDHCPlisten" type="boolean">
+            <default>true</default>
+            <label>Listen for dhcp requests</label>
+            <description>Usually a device requests an IP address in an IPv4 network with the help of DHCP as soon as it enters a network. If we listen to those
+            packets, we can detect a device presence even faster. You need elevated access rights (see readme) for this to work.</description>
+        </parameter>
+        <parameter name="cacheDeviceStateTimeInMS" type="integer">
+            <default>2000</default>
+            <label>Cache time in ms</label>
+            <description>The result of a device presence detection is cached for a small amount of time. Be aware that no new pings will be issued within this time frame, even if explicitly requested.</description>
+            <advanced>true</advanced>
+        </parameter>
+-->
+        <parameter name="ZiggoUsername" type="text">
+            <default></default>
+            <label>Ziggo Username</label>
+            <description>Username of your Ziggo account. Used to access the settopbox.</description>
+        </parameter>
+        <parameter name="ZiggoPassword" type="text">
+            <default></default>
+            <label>Ziggo Password</label>
+            <description>Password of your Ziggo account. Used to access the settopbox.</description>
+        </parameter>
+    </config-description>
+
+</binding:binding>
